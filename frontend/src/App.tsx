@@ -13,9 +13,9 @@ export function App() {
 
   return <div className="shell">
     <Sidebar {...model}/>
-    <div className="workspace-main"><header className="topbar"><div className="breadcrumb">Workspace <span>/</span> <b>{view === 'activity' ? 'Transactions' : view[0].toUpperCase() + view.slice(1)}</b></div><span className="environment"><i/> Demo mode</span></header>
+    <div className="workspace-main"><header className="topbar"><div className="breadcrumb">Workspace <span>/</span> <b>{view === 'activity' ? 'Transactions' : view[0].toUpperCase() + view.slice(1)}</b></div><div className="user-controls"><label htmlFor="active-user">Banking for</label><select id="active-user" value={model.activeUser} disabled={!!model.busy || !model.users.length} onChange={e => model.selectUser(e.target.value)}>{!model.users.length && <option value="">Create your first user</option>}{model.users.map(([key, name]) => <option key={key} value={key}>{name}</option>)}</select><span className="environment"><i/> Demo mode</span></div></header>
     <main>
-      <section className="intro"><div><p className="eyebrow">LET’S MAKE THINGS MOVE</p><h1>{title}</h1><p>Manage your accounts and explore payments in one simple workspace.</p></div><button ref={createButton} onClick={openCreate} className="primary"><Icon name="plus" size={17}/> Create account</button></section>
+      <section className="intro"><div><p className="eyebrow">YOUR EVERYDAY BANKING</p><h1>{title}</h1><p>Your accounts, your balance. Banking made simple.</p></div><button ref={createButton} onClick={openCreate} className="primary"><Icon name="plus" size={17}/> Add account / user</button></section>
       {error && !isCreateOpen && <div className="message error" role="alert"><Icon name="info"/>{error}<button aria-label="Dismiss error" onClick={() => setError('')}><Icon name="close" size={16}/></button></div>}
       {notice && <div className="message success" role="status"><Icon name="check"/>{notice}<button aria-label="Dismiss notification" onClick={() => setNotice('')}><Icon name="close" size={16}/></button></div>}
       <SummaryCards {...model}/>

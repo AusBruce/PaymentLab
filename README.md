@@ -35,7 +35,7 @@ Open **http://localhost:4173** to preview the build with the API running. Build 
 
 ## Frontend workspace
 
-The responsive dashboard includes Overview, Accounts, and Transactions views. Create accounts from the account dialog, search by owner or ID, and choose the arrow beside an account to use it as a transfer source. Transfers show available funds and require a review before confirmation.
+The responsive dashboard uses a yellow and charcoal banking theme and includes Overview, Accounts, and Transactions views. The “Banking for” selector scopes account balances, account lists, transfer sources, activity, and exports to the selected demo owner. Owner names are grouped ignoring case and surrounding whitespace; use the same name for multiple accounts belonging to one owner. Creating an account selects its owner. Transfer recipients can belong to any owner. These profiles are frontend filters, not authentication or API access control. Create accounts from the account dialog, search by owner or ID, and choose the arrow beside an account to use it as a transfer source. Transfers show available funds and require a review before confirmation.
 
 Transactions can be filtered by account and exported as CSV. Activity and transfer volume cover only the current page session because the API does not expose transaction history. All amounts use the API's shared demo currency, displayed as units. API connection failures are shown with a refresh action for retrying.
 
