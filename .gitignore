@@ -1,0 +1,13 @@
+**/bin/
+**/obj/
+.vs/
+.idea/
+*.user
+TestResults/
+
+**/node_modules/
+src/PaymentLab.Api/wwwroot/
+
+frontend/dist/
+frontend/.env.local
+frontend/.env.*.local
